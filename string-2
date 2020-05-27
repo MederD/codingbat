@@ -22,3 +22,65 @@ count_hi('hihi') → 2
 def count_hi(str):
   return str.count('hi')
 '''
+------------------------------------
+'''
+**String-2 > cat_dog**
+Return True if the string "cat" and "dog" appear the same number of times in the given string.
+cat_dog('catdog') → True
+cat_dog('catcat') → False
+cat_dog('1cat1cadodog') → True
+---
+def cat_dog(str):
+  if str.count('dog') == str.count('cat'):
+    return True
+  else:
+    return False
+'''
+------------------------------------
+'''
+**String-2 > count_code**
+Return the number of times that the string "code" appears anywhere in the given string, except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+count_code('aaacodebbb') → 1
+count_code('codexxcode') → 2
+count_code('cozexxcope') → 2
+---
+def count_code(str):
+  count = 0 
+  word = ['co'+ x +'e' for x in 'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z']
+  for i in word: 
+    num = str.count(i)
+    count += num
+  return count
+'''
+---------------------------------
+'''
+**String-2 > end_other**
+Given two strings, return True if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: s.lower() returns the lowercase version of a string.
+end_other('Hiabc', 'abc') → True
+end_other('AbC', 'HiaBc') → True
+end_other('abc', 'abXabc') → True
+---
+def end_other(a, b):
+  if a.lower().endswith(b.lower()) or b.lower().endswith(a.lower()):
+    return True
+  else:
+    return False
+'''
+----------------------------------
+'''
+**String-2 > xyz_there**
+Return True if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+xyz_there('abcxyz') → True
+xyz_there('abc.xyz') → False
+xyz_there('xyz.abc') → True
+---
+def xyz_there(str):
+  if str.endswith('.xyz'):
+    return False
+  elif ('xyz' in str):
+    return True
+  else:
+    return False
+ '''
+ --------------------------------
+ 
